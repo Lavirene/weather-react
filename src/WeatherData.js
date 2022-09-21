@@ -1,20 +1,9 @@
 import React from "react";
 import CustomDate from "./CustomDate";
 import WeatherIcon from "./WeatherIcon";
-
+import WeatherTemperature from "./WeatherTemperature"
 
 export default function WeatherData(props) {
-
-  function celsius(event) {
-    event.preventDefault();
-    return props.data.temp;
-  }
-  function fahrenheit(event) {
-    event.preventDefault()
-    let fhrn = Math.round( (props.data.temp * 9/5) + 32)
-    return fhrn;
-  }
-
   return (
     <div className="WeatherData">
 
@@ -29,12 +18,10 @@ export default function WeatherData(props) {
         <div className="col-6">
           <div className="row">
             <div className="col-6">
-
-            <WeatherIcon data={props.data.icon} />
+              <WeatherIcon data={props.data.icon} />
             </div>
             <div className="col-6">
-              <h4><span>{props.data.temp}</span>
-              <a href="/" onClick={celsius}>C°</a> | <a href="/" onClick={fahrenheit}>F°</a> </h4>
+              <WeatherTemperature celcius={props.data.temp} />
             </div>
           </div>
         </div>
