@@ -18,7 +18,7 @@ export default function WeatherData(props) {
         <div className="col-6">
           <div className="row">
             <div className="col-6">
-              <WeatherIcon data={props.data.icon} />
+              <WeatherIcon data={props.data.icon} size={60} />
             </div>
             <div className="col-6">
               <WeatherTemperature celcius={props.data.temp} />

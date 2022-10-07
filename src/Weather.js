@@ -3,6 +3,7 @@ import axios from "axios";
 
 import "./Weather.css"
 import WeatherData from "./WeatherData";
+import WeatherForecast from './WeatherForecast';
 
 export default function Weather(props) {
 
@@ -12,6 +13,7 @@ export default function Weather(props) {
   function displayWeather(response) {
     setWeather({
       loaded: true,
+      coord: response.data.coord,
       temp: Math.round(response.data.main.temp),
       desc: response.data.weather[0].description,
       date: new Date(response.data.dt * 1000),
@@ -52,6 +54,7 @@ export default function Weather(props) {
           </div>
         </form>
         <WeatherData data={weather} />
+        <WeatherForecast icon="01n" coord={weather.coord} />
       </div>
     )
   } else {
