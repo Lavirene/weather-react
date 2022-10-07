@@ -16,7 +16,7 @@ ul {
 }
 
 
-a.active {
+.active {
   color: orange;
   text-decoration: none;
 }
